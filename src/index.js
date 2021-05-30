@@ -1,10 +1,14 @@
-import { React, ReactDOM } from "libraries";
+import { React, ReactDOM, Provider } from "libraries";
+import { store } from "modules"
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "assets/scss/index.scss"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
