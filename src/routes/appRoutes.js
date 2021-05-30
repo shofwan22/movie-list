@@ -1,4 +1,4 @@
-import { Anagram, Home } from "pages"
+import { Anagram, Home, Detail } from "pages"
 
 const appRoutes = [
   {
@@ -6,6 +6,12 @@ const appRoutes = [
     component: Anagram,
     exact: true,
     path: "/anagram",
+  },
+  {
+    name: "Detail",
+    component: Detail,
+    exact: true,
+    path: "/detail/:title",
   },
   {
     name: "Home",

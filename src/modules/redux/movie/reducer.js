@@ -1,7 +1,8 @@
 import actionType from "./actionType"
 
 const initialState = {
-    items: []
+    items: [],
+    detail: {}
 }
 
 const movie = (state = initialState, action) => {
@@ -13,8 +14,13 @@ const movie = (state = initialState, action) => {
             }
         case actionType.GET_MOVIE_SCROLL:
             return {
-                state,
+                ...state,
                 items: state.items.length > 0 ? state.items.concat(action.value) : action.value
+            }
+        case actionType.GET_MOVIE_DETAIL: 
+            return {
+                ...state,
+                detail: action.value
             }
         default: 
             return state

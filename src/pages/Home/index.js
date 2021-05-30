@@ -8,7 +8,7 @@ class Home extends Component {
       super(props)
       this.state = {
         params: {
-          search: "",
+          s: "",
           page: 1,
         }
       }
@@ -20,7 +20,7 @@ class Home extends Component {
     handleSearch(data) {
       this.setState({
         params: {
-          search: data,
+          s: data,
           page: this.state.params.page,
         },
       }, () => {
@@ -38,7 +38,7 @@ class Home extends Component {
             if (this.props.movieList.length > 5) {
               this.setState({
                 params: {
-                  search: this.state.params.search,
+                  s: this.state.params.s,
                   page: this.state.params.page + 1,
                 },
               });
