@@ -1,21 +1,21 @@
 import { React, Card, Button, useState } from "libraries"
-import ModalPoster from "components/molecules/ModalPoster"
+import { ModalPoster } from "components/molecules"
 
-const CardMovie = () => {
+const CardMovie = (props) => {
     const [modalPoster, setModalPoster] = useState(false)
 
     return (
-      <Card>
+      <Card className="cardmovie">
         <Card.Img
           variant="top"
           width="286"
           height="180"
-          src="https://m.media-amazon.com/images/M/MV5BMTdjZTliODYtNWExMi00NjQ1LWIzN2MtN2Q5NTg5NTk3NzliL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
+          src={props.data.Poster}
           onClick={() => setModalPoster(true)}
         />
-        <Card.Body>
-          <Card.Title>Batman: The Killing Joke</Card.Title>
-          <Card.Text>Release : 2016</Card.Text>
+        <Card.Body className="cardmovie-body">
+          <Card.Title className="cardmovie-title">{props.data.Title}</Card.Title>
+          <Card.Text className="cardmovie-text">Release : {props.data.Year}</Card.Text>
           <Button variant="dark" block>
             Detail
           </Button>
@@ -24,7 +24,7 @@ const CardMovie = () => {
         <ModalPoster
           show={modalPoster}
           onHide={() => setModalPoster(false)}
-          image="https://m.media-amazon.com/images/M/MV5BMTdjZTliODYtNWExMi00NjQ1LWIzN2MtN2Q5NTg5NTk3NzliL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"
+          image={props.data.Poster}
         />
       </Card>
     );

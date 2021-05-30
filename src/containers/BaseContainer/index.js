@@ -5,7 +5,7 @@ const BaseContainer = ({ children }) => {
     return (
       <div>
         <Header />
-        <Container fluid className="mt-4">{children}</Container>
+        <Container className="mt-4">{children}</Container>
       </div>
     );
 }
